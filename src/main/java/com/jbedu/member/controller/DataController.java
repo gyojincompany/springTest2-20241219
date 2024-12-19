@@ -5,6 +5,7 @@ import javax.servlet.http.HttpServletRequest;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 @Controller
@@ -38,6 +39,12 @@ public class DataController {
 		return "login";
 	}
 	
+	@RequestMapping(value = "/login2") //login2.jsp를 실행시켜주는 역할만!
+	public String login2() {
+		
+		return "login2";
+	}
+	
 	@RequestMapping(value = "/confirmID") //클라이언트의 로그인 요청을 여기서 catch!(파라미터 값도 함께)
 	public String confirmID(HttpServletRequest request, Model model) {
 		
@@ -56,6 +63,21 @@ public class DataController {
 		return "confirmID";
 	}
 	
+	@RequestMapping(value = "/checkID", method = RequestMethod.POST) //클라이언트의 로그인 요청을 여기서 catch!(파라미터 값도 함께)
+	public String checkID(HttpServletRequest request, Model model) {
+		
+		String mid = request.getParameter("mid");
+		String mpw = request.getParameter("mpw");
+		
+		if(mid.equals("tiger") && mpw.equals("12345")) { //로그인 성공
+			model.addAttribute("idcheck", "memberOk");
+			model.addAttribute("loginid", mid);
+			model.addAttribute("loginpw", mpw);
+		} else { //로그인 실패
+			model.addAttribute("idcheck", "memberNo");
+		}
+		return "checkID";
+	}
 	
 	
 	
