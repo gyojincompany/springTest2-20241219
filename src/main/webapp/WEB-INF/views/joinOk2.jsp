@@ -9,9 +9,9 @@
 <body>
 	<h2>회원가입정보 확인</h2>
 	<hr>
-	아이디 : ${ddd.mid }<br><br>
-	비밀번호 : ${ddd.mpw }<br><br>
-	이름 : ${ddd.mname }<br><br>
-	이메일 : ${ddd.memail }<br><br>
+	아이디 : ${dto.mid }<br><br>
+	비밀번호 : ${dto.mpw }<br><br>
+	이름 : ${dto.mname }<br><br>
+	이메일 : ${dto.memail }<br><br>
 </body>
 </html>
