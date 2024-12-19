@@ -9,6 +9,9 @@
 <body>
 	<h2>프로야구 소식</h2>
 	<hr>
-	오늘의 프로야구소식을 알려드립니다.
+	오늘의 프로야구소식을 알려드립니다.<br>
+	<img src="../resources/img/spring.png"><br><br>
+	<img src="../images/springboot.jpg">
+	
 </body>
 </html>
